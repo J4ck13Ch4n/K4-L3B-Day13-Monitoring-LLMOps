@@ -25,7 +25,8 @@ Giữ time range mặc định 60 phút, refresh 30 giây và hiển thị thres
 2. Chạy `python scripts/load_test.py --concurrency 5` để tạo baseline.
 3. Dùng `data/logs.jsonl` làm nguồn chuẩn để tạo đúng sáu panel bằng Streamlit, notebook, Grafana hoặc công cụ tương đương. Langfuse vẫn là nơi mở trace/prompt version để điều tra sâu.
 4. Đặt tên panel, đơn vị và threshold giống contract.
-5. Chạy validator:
+5. Dashboard runtime local của bài này: `python scripts/dashboard_server.py` rồi mở `http://127.0.0.1:8765` (đọc `data/logs.jsonl`, 6 panel, `--window` đổi time range, mặc định 60 phút).
+6. Chạy validator:
 
 ```bash
 python scripts/validate_dashboard.py

@@ -1,0 +1,8 @@
+......................                                                   [100%]
+============================== warnings summary ===============================
+C:\Users\huudu\AppData\Local\Temp\claude\D--AI-in-Action-day13-K4-L3B-Day13-Monitoring-LLMOps\2a6f5943-7e67-4613-8bcd-651aae875427\scratchpad\venv\Lib\site-packages\langfuse\_client\observe.py:220
+  C:\Users\huudu\AppData\Local\Temp\claude\D--AI-in-Action-day13-K4-L3B-Day13-Monitoring-LLMOps\2a6f5943-7e67-4613-8bcd-651aae875427\scratchpad\venv\Lib\site-packages\langfuse\_client\observe.py:220: DeprecationWarning: 'asyncio.iscoroutinefunction' is deprecated and slated for removal in Python 3.16; use inspect.iscoroutinefunction() instead
+    if asyncio.iscoroutinefunction(func)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+22 passed, 1 warning in 2.08s
