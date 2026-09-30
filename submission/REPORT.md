@@ -27,6 +27,27 @@ Giữ đúng ba output text và năm ảnh dưới đây. Không tách thêm ả
 | Prompt versions + promote/rollback | `evidence/04-prompt-versioning.png` |
 | Dashboard + incident metric | `evidence/05-dashboard-incident.png` |
 
+### Evidence theo `docs/SCREENSHOT_GUIDE.md`
+
+Các file dưới đây đặt tên theo hướng dẫn chụp evidence mới; nhiều mục dùng lại cùng ảnh chụp ở bảng trên (cùng nội dung, khác tên).
+
+| Mục guide | File | Nguồn |
+|---|---|---|
+| 01 pytest | `evidence/01-pytest.txt` | output lệnh `python -m pytest -q` |
+| 02 log validator | `evidence/02-log-validator.txt` | output `scripts/validate_logs.py` |
+| 03 dashboard validator | `evidence/03-dashboard-validator.txt` | output `scripts/validate_dashboard.py` |
+| 04 structured log | `evidence/04-structured-log.png` | `data/logs.jsonl` |
+| 05 PII redaction | `evidence/05-pii-redaction.png` | `data/logs.jsonl`: `[REDACTED_EMAIL]`, `[REDACTED_PHONE_VN]`, `[REDACTED_CREDIT_CARD]` kèm `correlation_id` |
+| 06 trace list | `evidence/06-trace-list.png` | Langfuse, 32 trace |
+| 07 trace waterfall | `evidence/07-trace-waterfall.png` | Langfuse Timeline, `retrieval` 2.50s |
+| 08 trace metadata | `evidence/08-trace-metadata.png` | Langfuse, `correlation_id`, prompt, token, cost |
+| 09 prompt versions | `evidence/09-prompt-versions.png` | Langfuse, `day13-chat` v1/v2 |
+| 10 prompt rollback | `evidence/10-prompt-rollback.png` | trace `production` v2 + trang versions sau rollback; trace ID ở mục 5 |
+| 11 dashboard overview | `evidence/11-dashboard-overview.png` | `scripts/dashboard_server.py`, 60 phút |
+| 12 incident metric | `evidence/12-incident-metric.png` | `scripts/dashboard_server.py`, 240 phút, P95 4420ms |
+| 13 incident log | `evidence/13-incident-log.png` | `req-b714a2b0` |
+| 14 incident trace | `evidence/14-incident-trace.png` | trace `871694390b94865518a8c447284dc3db` |
+
 > `05-dashboard-incident.png` là ảnh chụp dashboard chạy thật `scripts/dashboard_server.py` (đọc trực tiếp `data/logs.jsonl`, 6 panel theo `config/dashboard.yaml`, time range 60 phút, refresh 30s). Các ảnh 01–04 phải tự chụp từ VS Code / Langfuse theo `docs/SUBMISSION.md` mục 5.3.
 
 ## 3. Kết quả kỹ thuật
