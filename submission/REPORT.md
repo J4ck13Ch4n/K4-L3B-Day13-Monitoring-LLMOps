@@ -14,18 +14,18 @@
 
 ## 2. Evidence index
 
-Giữ đúng ba output text và năm ảnh dưới đây. Không tách thêm ảnh; nếu cần giải thích, ghi bằng chữ trong các mục sau.
+Bộ evidence theo `docs/SUBMISSION.md` gồm ba output text và năm ảnh ở bảng dưới; ngay sau đó là bộ 14 mục đặt tên theo `docs/SCREENSHOT_GUIDE.md` (dùng lại cùng nội dung ảnh). Giải thích thêm được ghi bằng chữ trong các mục sau.
 
 | Evidence | Đường dẫn |
 |---|---|
-| Pytest cuối | `evidence/pytest.txt` |
-| Log validator | `evidence/log-validator.txt` |
-| Dashboard validator | `evidence/dashboard-validator.txt` |
-| Structured log + incident log | `evidence/01-incident-log.png` |
-| Trace list | `evidence/02-trace-list.png` |
-| Trace waterfall + metadata + incident trace | `evidence/03-incident-trace.png` |
-| Prompt versions + promote/rollback | `evidence/04-prompt-versioning.png` |
-| Dashboard + incident metric | `evidence/05-dashboard-incident.png` |
+| Pytest cuối | [`evidence/pytest.txt`](evidence/pytest.txt) |
+| Log validator | [`evidence/log-validator.txt`](evidence/log-validator.txt) |
+| Dashboard validator | [`evidence/dashboard-validator.txt`](evidence/dashboard-validator.txt) |
+| Structured log + incident log | [`evidence/01-incident-log.png`](evidence/01-incident-log.png) |
+| Trace list | [`evidence/02-trace-list.png`](evidence/02-trace-list.png) |
+| Trace waterfall + metadata + incident trace | [`evidence/03-incident-trace.png`](evidence/03-incident-trace.png) |
+| Prompt versions + promote/rollback | [`evidence/04-prompt-versioning.png`](evidence/04-prompt-versioning.png) |
+| Dashboard + incident metric | [`evidence/05-dashboard-incident.png`](evidence/05-dashboard-incident.png) |
 
 ### Evidence theo `docs/SCREENSHOT_GUIDE.md`
 
@@ -33,22 +33,22 @@ Các file dưới đây đặt tên theo hướng dẫn chụp evidence mới; n
 
 | Mục guide | File | Nguồn |
 |---|---|---|
-| 01 pytest | `evidence/01-pytest.txt` | output lệnh `python -m pytest -q` |
-| 02 log validator | `evidence/02-log-validator.txt` | output `scripts/validate_logs.py` |
-| 03 dashboard validator | `evidence/03-dashboard-validator.txt` | output `scripts/validate_dashboard.py` |
-| 04 structured log | `evidence/04-structured-log.png` | `data/logs.jsonl` |
-| 05 PII redaction | `evidence/05-pii-redaction.png` | `data/logs.jsonl`: `[REDACTED_EMAIL]`, `[REDACTED_PHONE_VN]`, `[REDACTED_CREDIT_CARD]` kèm `correlation_id` |
-| 06 trace list | `evidence/06-trace-list.png` | Langfuse, 32 trace |
-| 07 trace waterfall | `evidence/07-trace-waterfall.png` | Langfuse Timeline, `retrieval` 2.50s |
-| 08 trace metadata | `evidence/08-trace-metadata.png` | Langfuse, `correlation_id`, prompt, token, cost |
-| 09 prompt versions | `evidence/09-prompt-versions.png` | Langfuse, `day13-chat` v1/v2 |
-| 10 prompt rollback | `evidence/10-prompt-rollback.png` | trace `production` v2 + trang versions sau rollback; trace ID ở mục 5 |
-| 11 dashboard overview | `evidence/11-dashboard-overview.png` | `scripts/dashboard_server.py`, 60 phút |
-| 12 incident metric | `evidence/12-incident-metric.png` | `scripts/dashboard_server.py`, 240 phút, P95 4420ms |
-| 13 incident log | `evidence/13-incident-log.png` | `req-b714a2b0` |
-| 14 incident trace | `evidence/14-incident-trace.png` | trace `871694390b94865518a8c447284dc3db` |
+| 01 pytest | [`evidence/01-pytest.txt`](evidence/01-pytest.txt) | output lệnh `python -m pytest -q` |
+| 02 log validator | [`evidence/02-log-validator.txt`](evidence/02-log-validator.txt) | output `scripts/validate_logs.py` |
+| 03 dashboard validator | [`evidence/03-dashboard-validator.txt`](evidence/03-dashboard-validator.txt) | output `scripts/validate_dashboard.py` |
+| 04 structured log | [`evidence/04-structured-log.png`](evidence/04-structured-log.png) | `data/logs.jsonl` |
+| 05 PII redaction | [`evidence/05-pii-redaction.png`](evidence/05-pii-redaction.png) | `data/logs.jsonl`: `[REDACTED_EMAIL]`, `[REDACTED_PHONE_VN]`, `[REDACTED_CREDIT_CARD]` kèm `correlation_id` |
+| 06 trace list | [`evidence/06-trace-list.png`](evidence/06-trace-list.png) | Langfuse, 32 trace |
+| 07 trace waterfall | [`evidence/07-trace-waterfall.png`](evidence/07-trace-waterfall.png) | Langfuse Timeline, `retrieval` 2.50s |
+| 08 trace metadata | [`evidence/08-trace-metadata.png`](evidence/08-trace-metadata.png) | Langfuse, `correlation_id`, prompt, token, cost |
+| 09 prompt versions | [`evidence/09-prompt-versions.png`](evidence/09-prompt-versions.png) | Langfuse, `day13-chat` v1/v2 |
+| 10 prompt rollback | [`evidence/10-prompt-rollback.png`](evidence/10-prompt-rollback.png) | trace `production` v2 + trang versions sau rollback; trace ID ở mục 5 |
+| 11 dashboard overview | [`evidence/11-dashboard-overview.png`](evidence/11-dashboard-overview.png) | `scripts/dashboard_server.py`, 60 phút |
+| 12 incident metric | [`evidence/12-incident-metric.png`](evidence/12-incident-metric.png) | `scripts/dashboard_server.py`, 240 phút, P95 4420ms |
+| 13 incident log | [`evidence/13-incident-log.png`](evidence/13-incident-log.png) | `req-b714a2b0` |
+| 14 incident trace | [`evidence/14-incident-trace.png`](evidence/14-incident-trace.png) | trace `871694390b94865518a8c447284dc3db` |
 
-> `05-dashboard-incident.png` là ảnh chụp dashboard chạy thật `scripts/dashboard_server.py` (đọc trực tiếp `data/logs.jsonl`, 6 panel theo `config/dashboard.yaml`, time range 60 phút, refresh 30s). Các ảnh 01–04 phải tự chụp từ VS Code / Langfuse theo `docs/SUBMISSION.md` mục 5.3.
+> `05-dashboard-incident.png` là ảnh chụp dashboard chạy thật `scripts/dashboard_server.py` (đọc trực tiếp `data/logs.jsonl`, 6 panel theo `config/dashboard.yaml`, time range 60 phút, refresh 30s). Ảnh 01 chụp từ `data/logs.jsonl`; ảnh 02–04 chụp từ project Langfuse cá nhân.
 
 ## 3. Kết quả kỹ thuật
 
@@ -56,13 +56,13 @@ Các file dưới đây đặt tên theo hướng dẫn chụp evidence mới; n
 |---|---|---|---|
 | `validate_logs.py` | chưa đạt (TODO CP1) | 100/100 | đủ correlation, enrichment, 0 PII leak |
 | `validate_dashboard.py` | HỢP LỆ 6/6 (contract sẵn) | HỢP LỆ 6/6 | giữ nguyên 6 panel contract |
-| `pytest` | 22 passed | 22 passed | xem `evidence/pytest.txt` |
+| `pytest` | 22 passed | 22 passed | xem [`evidence/pytest.txt`](evidence/pytest.txt) |
 | Số traces hợp lệ | 0 | ≥10 traces trên Langfuse: 28 trace root trong ảnh 02 (10 baseline + 5 challenge + các lần chạy thử), 32 trace sau khi tạo thêm trace `production`/`baseline`/`candidate` | kiểm tra ảnh 02 |
 | Số PII leak | - | 0 | sample queries có email/phone/thẻ giả đều bị redact |
 | Latency P95 / TTFT P95 | - | overall P50=152ms P95=20335ms (lẫn 1 request cold-start 20s sau restart); incident window 5/5 requests 2651–2652ms; TTFT P95=50ms | cold-start là request đầu sau restart (fetch prompt); incident vượt ngưỡng 2000ms |
 | Retrieval success rate | - | 100% (tool_success=true, error_rate=0%) | incident rag_slow chỉ chậm, không lỗi |
 
-Môi trường chạy: Python 3.14 trên Windows với `pydantic>=2.12` (bản pin `pydantic==2.11.4` không build được trên 3.14; trên Python 3.11 dùng `requirements.txt` nguyên bản). Chi tiết workload cuối: 15 `response_sent`, quality_mean=0.867, cost_total=0.0288 USD, tokens_in=524, tokens_out=1817.
+Môi trường chạy: Python 3.14 trên Windows với `pydantic>=2.12` (bản pin `pydantic==2.11.4` không build được trên 3.14; trên Python 3.11 dùng `requirements.txt` nguyên bản). Chi tiết workload challenge (15 request): 15 `response_sent`, quality_mean=0.867, cost_total=0.0288 USD, tokens_in=524, tokens_out=1817.
 
 ## 4. Logging và PII
 
@@ -112,11 +112,11 @@ Môi trường chạy: Python 3.14 trên Windows với `pydantic>=2.12` (bản p
 
 ## 9. Checklist trước khi nộp
 
-- [ ] Kết quả và evidence thuộc commit SHA cuối.
-- [ ] Tất cả ảnh/output mở được bằng đường dẫn tương đối.
-- [ ] Có đúng 3 file text và 5 ảnh runtime theo hướng dẫn.
-- [ ] Incident evidence nối đúng metric → log → trace.
-- [ ] Trace/prompt evidence thuộc project Langfuse cá nhân và ảnh không lộ key/secret.
-- [ ] Repository chạy lại được theo README.
-- [ ] Không có secret, API key, PII thô hoặc evidence của người khác/lớp khác.
+- [x] Kết quả và evidence thuộc commit SHA cuối.
+- [x] Tất cả ảnh/output mở được bằng đường dẫn tương đối.
+- [x] Có 3 file text và 5 ảnh runtime theo `SUBMISSION.md`, cùng bộ 14 mục theo `SCREENSHOT_GUIDE.md`.
+- [x] Incident evidence nối đúng metric → log → trace.
+- [x] Trace/prompt evidence thuộc project Langfuse cá nhân và ảnh không lộ key/secret.
+- [x] Repository chạy lại được theo README.
+- [x] Không có secret, API key, PII thô hoặc evidence của người khác/lớp khác.
 - [ ] URL repo và commit SHA cuối đã được nộp trên LMS/Codelabs.
